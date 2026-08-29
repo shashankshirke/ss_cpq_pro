@@ -1,0 +1,16 @@
+{
+ "doctype": "DocType",
+ "name": "CPQ Attribute Group Item",
+ "module": "SS CPQ Pro",
+ "istable": 1,
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["attribute", "is_mandatory", "sequence", "default_value_override"],
+ "fields": [
+  {"fieldname": "attribute", "fieldtype": "Link", "label": "Attribute", "options": "CPQ Attribute", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "is_mandatory", "fieldtype": "Check", "label": "Is Mandatory", "default": "1", "in_list_view": 1},
+  {"fieldname": "sequence", "fieldtype": "Int", "label": "Sequence", "in_list_view": 1},
+  {"fieldname": "default_value_override", "fieldtype": "Data", "label": "Default Value Override", "in_list_view": 1, "description": "Overrides the attribute's own default, for this group only"}
+ ],
+ "permissions": []
+}

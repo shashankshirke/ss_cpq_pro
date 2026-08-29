@@ -1,0 +1,15 @@
+{
+ "doctype": "DocType",
+ "name": "CPQ Configuration Detail",
+ "module": "SS CPQ Pro",
+ "istable": 1,
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["attribute", "attribute_value", "price_delta"],
+ "fields": [
+  {"fieldname": "attribute", "fieldtype": "Link", "label": "Attribute", "options": "CPQ Attribute", "in_list_view": 1, "read_only": 1},
+  {"fieldname": "attribute_value", "fieldtype": "Data", "label": "Selected Value", "in_list_view": 1, "read_only": 1},
+  {"fieldname": "price_delta", "fieldtype": "Currency", "label": "Price Delta", "in_list_view": 1, "read_only": 1}
+ ],
+ "permissions": []
+}

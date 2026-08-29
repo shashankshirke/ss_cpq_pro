@@ -1,0 +1,25 @@
+{
+ "doctype": "DocType",
+ "name": "CPQ Attribute",
+ "module": "SS CPQ Pro",
+ "autoname": "field:attribute_name",
+ "engine": "InnoDB",
+ "field_order": [
+  "attribute_name", "attribute_type", "column_break_1",
+  "values", "min_value", "max_value", "price_per_unit", "default_value"
+ ],
+ "fields": [
+  {"fieldname": "attribute_name", "fieldtype": "Data", "label": "Attribute Name", "reqd": 1, "unique": 1, "in_list_view": 1},
+  {"fieldname": "attribute_type", "fieldtype": "Select", "label": "Attribute Type", "options": "Select\nNumber\nText", "default": "Select", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+  {"fieldname": "values", "fieldtype": "Table", "label": "Values", "options": "CPQ Attribute Value", "depends_on": "eval:doc.attribute_type=='Select'"},
+  {"fieldname": "min_value", "fieldtype": "Float", "label": "Min Value", "depends_on": "eval:doc.attribute_type=='Number'"},
+  {"fieldname": "max_value", "fieldtype": "Float", "label": "Max Value", "depends_on": "eval:doc.attribute_type=='Number'"},
+  {"fieldname": "price_per_unit", "fieldtype": "Currency", "label": "Price Per Unit", "depends_on": "eval:doc.attribute_type=='Number'", "description": "Price added = entered value \u00d7 this rate. Leave 0 if this attribute doesn't affect price."},
+  {"fieldname": "default_value", "fieldtype": "Data", "label": "Default Value", "depends_on": "eval:doc.attribute_type!='Select'"}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "Sales Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "doctype": "DocType",
+ "name": "CPQ Constraint Rule",
+ "module": "SS CPQ Pro",
+ "engine": "InnoDB",
+ "field_order": [
+  "attribute_group", "rule_type", "is_active", "section_break_1",
+  "if_attribute", "if_operator", "if_value", "column_break_1",
+  "then_attribute", "then_value", "description"
+ ],
+ "fields": [
+  {"fieldname": "attribute_group", "fieldtype": "Link", "label": "Attribute Group", "options": "CPQ Attribute Group", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "rule_type", "fieldtype": "Select", "label": "Rule Type", "options": "Mandatory\nExclusion", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": "1", "in_list_view": 1},
+  {"fieldname": "section_break_1", "fieldtype": "Section Break", "label": "If"},
+  {"fieldname": "if_attribute", "fieldtype": "Link", "label": "If Attribute", "options": "CPQ Attribute", "reqd": 1},
+  {"fieldname": "if_operator", "fieldtype": "Select", "label": "Operator", "options": "=\n!=\n>\n>=\n<\n<=", "default": "=", "reqd": 1},
+  {"fieldname": "if_value", "fieldtype": "Data", "label": "If Value", "reqd": 1},
+  {"fieldname": "column_break_1", "fieldtype": "Column Break", "label": "Then"},
+  {"fieldname": "then_attribute", "fieldtype": "Link", "label": "Then Attribute", "options": "CPQ Attribute", "reqd": 1},
+  {"fieldname": "then_value", "fieldtype": "Data", "label": "Then Value", "reqd": 1, "description": "For Mandatory rules: the value that gets auto-set. For Exclusion rules: the value that becomes invalid."},
+  {"fieldname": "description", "fieldtype": "Small Text", "label": "Description"}
+ ],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "Sales Manager", "read": 1, "write": 1, "create": 1, "delete": 1}
+ ]
+}

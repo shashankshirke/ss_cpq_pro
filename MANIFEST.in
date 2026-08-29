@@ -1,0 +1,12 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+recursive-include ss_cpq_pro *.css
+recursive-include ss_cpq_pro *.csv
+recursive-include ss_cpq_pro *.html
+recursive-include ss_cpq_pro *.js
+recursive-include ss_cpq_pro *.json
+recursive-include ss_cpq_pro *.md
+recursive-include ss_cpq_pro *.py
+recursive-include ss_cpq_pro *.txt
+recursive-exclude ss_cpq_pro *.pyc

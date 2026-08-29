@@ -1,0 +1,9 @@
+{
+ "doctype": "Page",
+ "module": "SS CPQ Pro",
+ "name": "cpq-configurator",
+ "page_name": "cpq-configurator",
+ "standard": "Yes",
+ "system_page": 0,
+ "title": "CPQ Configurator"
+}
